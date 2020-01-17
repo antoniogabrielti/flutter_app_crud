@@ -18,9 +18,7 @@ class _TelaState extends State<Tela> {
 
   @override
   void initState() {
-    print("init state");
-    _bloc.getData();
-
+    // _bloc.getData();
     super.initState();
   }
 
@@ -38,13 +36,12 @@ class _TelaState extends State<Tela> {
                 initialData: null,
                 stream: _bloc.webStream,
                 builder: (context, snapshot) {
-
-                  print("StreamBuilder ${snapshot.data}");
                   if (snapshot.data == null) {
                     return CircularProgressIndicator();
                   }
 
                   var map = json.decode(snapshot.data);
+
                   var user = User.fromJson(map);
 
                   return Text('Olá ${user.name}');

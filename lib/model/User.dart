@@ -15,6 +15,10 @@ class User{
                 user['status']);
   }
 
+  Map<String,dynamic> toMap(){
+    return {'id':id, 'name':name, 'status':status};
+  }
+
   @override
   String toString() {
     return 'User: id=$id, name=$name, status=$status';
